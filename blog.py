@@ -18,7 +18,7 @@ def login_required(f):
 class RegisterForm(Form):
     name = StringField("İsim Soyisim",validators=[validators.Length(min = 4, max = 25)])
     username = StringField("Kullanıcı adı",validators=[validators.Length(min = 5, max = 20)])
-    email = StringField("Mail adresi",validators=[validators.Email(message="Lütfen geçerli bir mail adresi giriniz.")])
+    email = StringField("Mail adresi",validators=[validators.length(min = 5 max = 40)])
     password = PasswordField("Parola:",validators=[
         validators.DataRequired(message="lütfen bir parola belirleyin."),
         validators.EqualTo(fieldname= "confirm", message="Parolanız uyuşmuyor.")
